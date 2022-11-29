@@ -1,2 +1,1 @@
-# automatizacion-s8
-Entrega final pruebas de automatización
+* [Reconocimiento](Reconocimiento/RiPuppet_Ghost_V4/README.md)

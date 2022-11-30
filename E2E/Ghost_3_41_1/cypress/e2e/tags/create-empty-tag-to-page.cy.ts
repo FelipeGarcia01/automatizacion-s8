@@ -1,4 +1,4 @@
-import LoginAdminPage from "../../PageObject/LoginAdminPage"
+import { LoginPage } from "../../PageObject/login-page"
 import PostPage from "../../PageObject/PostPage"
 import TagPage from "../../PageObject/TagPage";
 import { IStrategy } from "../../support/strategy/i-strategy";
@@ -7,6 +7,8 @@ require('@cypress/xpath');
 
 describe("Create empty tag usign nauthty data and assign to post Test Suite", function () {
     let strategy: IStrategy;
+    let logInPage = new LoginPage();
+
     before(async () => {  
         strategy = await StrategyFactory.getStrategy();
       })
@@ -17,10 +19,10 @@ describe("Create empty tag usign nauthty data and assign to post Test Suite", fu
         let namePost = strategy.getShortString();
         let descriptionPost = strategy.getShortString();
         let nameTag = strategy.getNaughtyString();
-        const login = new LoginAdminPage();   
+  
         
         //When
-        login.login();            
+        logInPage.doLogIn();           
         const tag = new TagPage();
         cy.wait(1000);        
         tag.navigate();

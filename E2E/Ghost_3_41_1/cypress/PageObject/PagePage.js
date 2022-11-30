@@ -1,4 +1,4 @@
-import takeScreenShot from '../utils/funcs.js';
+import takeScreenShot from '../utils/screenshots';
 
 let config = require('../../config.json');
 
@@ -29,75 +29,75 @@ export class PagePage {
 
     createPage(){
         this.elements.createBtn().click();
-        
+        takeScreenShot();
     }
     enterNamePage(text){        
         this.elements.namePageField().clear().type(text);
-        
+        takeScreenShot();
         return this
     }
     enterDescriptionPage(text)
     {
         this.elements.descriptionPageField().clear().type(text);
-        
+        takeScreenShot();
         return this
     }
     selectPublish() {
         this.elements.selectPublish().click( {force: true});
-        
+        takeScreenShot();
         return this
     }
 
     publish() {
         this.elements.publishBtn().click({force: true});
-        
+        takeScreenShot();
         return this
     }
 
     waitForPublish(){
         cy.xpath("//button[2]/span",{ timeout: 10000 }).should('have.text',"Update");
-        
+        takeScreenShot();
         return this
     }
 
     closeWindowPublish(){
         this.elements.closeWindowPublish().click();
-        
+        takeScreenShot();
         return this
     }
 
     validateTitlePagePublished(text){                        
         this.elements.titlePagePublished(text,{ timeout: 10000 }).should('have.text',text);    
-        
+        takeScreenShot();
         return this;
     }
     validateDescriptionPagePublished(description){                                
         this.elements.descriptionPagePublished(description).should('have.text',description);        
-        
+        takeScreenShot();
         return this;
     }
 
     selectSetting(){
         this.elements.selectSetting().click();
-        
+        takeScreenShot();
         return this            
     }
 
     listTag(){
         this.elements.listTag().eq(0).click();
-        
+        takeScreenShot();
         return this            
     }
 
     selectTag(text){
         this.elements.selectFilterTag(text).eq(0).click();
-           
+        takeScreenShot();  
     }
 
     closePostSettings(){
             
         this.elements.closePostSettings().click({force: true});
-        
+        takeScreenShot();
         return this 
     }
 

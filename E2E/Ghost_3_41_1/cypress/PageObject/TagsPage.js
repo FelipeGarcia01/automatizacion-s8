@@ -1,4 +1,4 @@
-import takeScreenShot from '../utils/funcs.js';
+import takeScreenShot from '../utils/screenshots';
 
 let config = require('../../config.json')
 export class TagsPage {
@@ -11,6 +11,7 @@ export class TagsPage {
         cy.visit(config.siteHost+'ghost/#/tags')
         cy.wait(2000)
         cy.contains(tagName)
+        takeScreenShot();
     }
 }
 

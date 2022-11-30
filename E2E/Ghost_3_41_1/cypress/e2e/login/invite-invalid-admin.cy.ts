@@ -1,29 +1,22 @@
-import { LoginPage } from '../../PageObject/login-page-d.js';
-import { MemberPage } from '../../PageObject/members-page.js';
+
 import { StrategyFactory } from '../../support/strategy/strategy-factory';
 import { IStrategy } from '../../support/strategy/i-strategy';
-let config = require('../../../config.json');
+import { LoginPage } from '../../PageObject/login-page';
+import { MemberPage } from '../../PageObject/members-page';
+
 
 describe('Scenario1',()=>{
-    // let strategy: Promise<IStrategy> = createStrategy();
 
-    // async function createStrategy() {
-    //     let strategy = await StrategyFactory.getStrategy();
-    //     return strategy;
-    // }
     let strategy: IStrategy;
-  
+    let logInPage = new LoginPage();
+    
     before(async () =>{
       strategy = await StrategyFactory.getStrategy();
     })
 
-    // strategy.then((value) => {
-
     it ('Invite admin with invalid email', () => {
-        let userText = config.logIn.userName;
-        let passText = config.logIn.userPass;
-        let loginPage = new LoginPage(userText, passText);
-        loginPage.doLogIn();
+
+        logInPage.doLogIn();
         
         let membersPage = new MemberPage();
         let memberEmail = strategy.getShortString();
@@ -31,7 +24,5 @@ describe('Scenario1',()=>{
         membersPage.inviteNewMember(memberEmail, memberRole);
 
     });
-
-    // });
 
 });

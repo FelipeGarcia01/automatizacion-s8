@@ -1,5 +1,4 @@
 import takeScreenShot from '../utils/screenshots';
-import { StrategyFactory } from '../support/strategy/strategy-factory';
 import { IStrategy } from '../support/strategy/i-strategy';
 
 let config = require('../../config.json');

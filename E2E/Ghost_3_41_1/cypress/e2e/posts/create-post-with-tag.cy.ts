@@ -1,12 +1,13 @@
-import LoginPage from '../../PageObject/LoginPage'
 import CreatePostPage from '../../PageObject/CreatePostPage'
 import TagsPage from '../../PageObject/TagsPage'
 import LabsPage from '../../PageObject/LabsPage'
 import { IStrategy } from '../../support/strategy/i-strategy'
 import { StrategyFactory } from "../../support/strategy/strategy-factory";
-require('@cypress/xpath')
-let config =  require("../../../config.json")
+import { LoginPage } from '../../PageObject/login-page';
 
+
+require('@cypress/xpath')
+let logInPage = new LoginPage();
 
 describe('Create tag from post', function () {
   let strategy: IStrategy;
@@ -19,7 +20,8 @@ describe('Create tag from post', function () {
     let title = strategy.getShortString()
     let body = strategy.getLargeString()
     let tag = strategy.getTagName()
-    LoginPage.login(config.logIn.userName, config.logIn.userPass)
+    
+    logInPage.doLogIn()
     LabsPage.clearAdmin()
 
     //When
@@ -35,7 +37,8 @@ describe('Create tag from post', function () {
     let title = strategy.getNaughtyString()
     let body = strategy.getNaughtyString()
     let tag = strategy.getNaughtyString()
-    LoginPage.login(config.logIn.userName, config.logIn.userPass)
+    
+    logInPage.doLogIn()
     LabsPage.clearAdmin()
 
     //When

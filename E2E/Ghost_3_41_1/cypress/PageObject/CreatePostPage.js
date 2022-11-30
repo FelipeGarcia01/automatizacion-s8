@@ -1,3 +1,5 @@
+import takeScreenShot from "../utils/screenshots"
+
 export class CreatePostPage {
     constructor () {
         this.buttonPosts = "//a[@class='ember-view']"
@@ -28,46 +30,63 @@ export class CreatePostPage {
     createPost = (postTitle, postBody) => {
         cy.xpath(this.buttonPosts).contains("Post").click({force: true})
         cy.xpath(this.buttonCreatePost).click({force: true})
+        takeScreenShot()
         cy.xpath(this.postTitle).type(postTitle)
         cy.xpath(this.postBody).type(postBody)
+        takeScreenShot()
     }
 
     publishPost = () => {
         cy.xpath(this.buttonPublish).click()
+        takeScreenShot()
         cy.xpath(this.buttonPublishNow).click()
-        cy.wait(200)
+        takeScreenShot()
         cy.xpath(this.buttonReturnPosts).contains("Posts").click()
+        takeScreenShot()
         cy.xpath(this.buttonCloseNotifyNewPosts).click()
+        takeScreenShot()
     }
 
     unpublishedPost = () => {
         cy.xpath(this.buttonUpdatePost).click()
+        takeScreenShot()
         cy.xpath(this.selectUnpublished).click()
+        takeScreenShot()
         cy.xpath(this.buttonUnpublished).click()
-        cy.wait(200)
+        takeScreenShot()
         cy.xpath(this.buttonReturnPosts).contains("Posts").click()
+        takeScreenShot()
     }
 
     createTagFromPost = (tagName) => {
         cy.xpath(this.buttonSetting).click()
+        takeScreenShot()
         cy.xpath(this.nameTag).type(tagName + '{enter}')
+        takeScreenShot()
         cy.xpath(this.buttonCloseTag).click()
-        cy.wait(200)
+        takeScreenShot()
         cy.xpath(this.buttonReturnPosts).contains("Posts").click()
+        takeScreenShot()
     }
 
     schedulePostPublication = () => {
         cy.xpath(this.buttonPublish).click()
+        takeScreenShot()
         cy.xpath(this.radioButtonSelectSchedulesPost).click()
+        takeScreenShot()
         cy.xpath(this.buttonSchedulesPost).click()
-        cy.wait(200)
+        takeScreenShot()
         cy.xpath(this.buttonReturnPosts).contains("Posts").click()
+        takeScreenShot()
     }
 
     deletePost = () => {
         cy.xpath(this.buttonSetting).click()
+        takeScreenShot()
         cy.xpath(this.buttonDeletePost).click()
+        takeScreenShot()
         cy.xpath(this.buttonConfirmDeletePost).click()
+        takeScreenShot()
     }
 }
 

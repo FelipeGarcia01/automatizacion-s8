@@ -1,3 +1,5 @@
+import takeScreenShot from "../utils/screenshots"
+
 export class PostPage {
     constructor () {
         this.buttonDialogSchedules = "//span[@class='gh-notification-title']"
@@ -11,18 +13,22 @@ export class PostPage {
     validateSchedulePost = (postTitle) => {
         cy.xpath(this.buttonDialogSchedules).contains("Scheduled")
         cy.contains(postTitle)
+        takeScreenShot();
     }
 
     validateDeletePost = () => {
         cy.xpath(this.h3ThereIsNoPost)
+        takeScreenShot();
     }
 
     validateDraftPost = () => {
         cy.xpath(this.spanDraft)
+        takeScreenShot();
     }
 
     enterPost = (titlePost) => {
         cy.xpath(this.post + titlePost + "']").click()
+        takeScreenShot();
     }
 }
 

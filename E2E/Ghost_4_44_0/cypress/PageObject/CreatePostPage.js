@@ -4,12 +4,13 @@ export class CreatePostPage {
     constructor () {
         this.buttonPosts = "//a[@class='ember-view']"
         this.buttonCreatePost = "//span[normalize-space()='New post']"
-        this.postTitle = "//textarea[@placeholder='Post Title']"
+        this.postTitle = "//textarea[@placeholder='Post title']"
         this.postBody = "//div[@class='koenig-editor__editor __mobiledoc-editor __has-no-content']"
 
         this.buttonPublish = "//span[normalize-space()='Publish']"
-        this.buttonPublishNow = "//button[@class='gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view']//span[contains(text(),'Publish')]"
-        this.buttonReturnPosts = "//a[@class='blue link fw4 flex items-center ember-view']"
+        this.buttonPublishNow = "//button[@class='gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view']//span[contains(text(),'Publish')]"
+        this.buttonConfirmPublish = "//button[@class='gh-btn gh-btn-black gh-btn-icon ember-view']//span[contains(text(),'Publish')]"                                       
+        this.buttonReturnPosts = "//a[@class='ember-view gh-editor-back-button']"
         this.buttonCloseNotifyNewPosts = "//button[@class='gh-notification-close']//*[name()='svg']//*[name()='path' and contains(@d,'M12.707 12')]"
 
         this.buttonSetting = "//button[@title='Settings']//*[name()='svg']"
@@ -18,7 +19,7 @@ export class CreatePostPage {
 
         this.radioButtonSelectSchedulesPost = "//div[@class='gh-publishmenu-radio ']//div[@class='gh-publishmenu-radio-button']"
         this.buttonSchedulesPost = "//span[normalize-space()='Schedule']"
-
+        this.buttonConfirmModalSchedulesPost = "//span[normalize-space()='Schedule']"
         this.buttonDeletePost = "//span[normalize-space()='Delete post']"
         this.buttonConfirmDeletePost = "(//span[normalize-space()='Delete'])[1]"
 
@@ -40,6 +41,8 @@ export class CreatePostPage {
         cy.xpath(this.buttonPublish).click()
         takeScreenShot()
         cy.xpath(this.buttonPublishNow).click()
+        takeScreenShot()
+        cy.xpath(this.buttonConfirmPublish).click()
         takeScreenShot()
         cy.xpath(this.buttonReturnPosts).contains("Posts").click()
         takeScreenShot()
@@ -63,10 +66,10 @@ export class CreatePostPage {
         takeScreenShot()
         cy.xpath(this.nameTag).type(tagName + '{enter}')
         takeScreenShot()
-        cy.xpath(this.buttonCloseTag).click()
+        cy.xpath(this.buttonSetting).click()
         takeScreenShot()
-        cy.xpath(this.buttonReturnPosts).contains("Posts").click()
-        takeScreenShot()
+        //cy.xpath(this.buttonReturnPosts).contains("Posts").click()
+        //takeScreenShot()
     }
 
     schedulePostPublication = () => {
@@ -75,6 +78,8 @@ export class CreatePostPage {
         cy.xpath(this.radioButtonSelectSchedulesPost).click()
         takeScreenShot()
         cy.xpath(this.buttonSchedulesPost).click()
+        takeScreenShot()
+        cy.xpath(this.buttonConfirmModalSchedulesPost).click()
         takeScreenShot()
         cy.xpath(this.buttonReturnPosts).contains("Posts").click()
         takeScreenShot()

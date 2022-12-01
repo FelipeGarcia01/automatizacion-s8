@@ -46,7 +46,8 @@ describe("Create empty tag usign nauthty data and assign to post Test Suite", fu
         page.closePostSettings();
         cy.wait(1000);  
         page.selectPublish();
-        page.publish();     
+        page.publish();  
+        page.confirmPublish(); 
         page.waitForPublish();        
         page.closeWindowPublish();
         page.navigate();

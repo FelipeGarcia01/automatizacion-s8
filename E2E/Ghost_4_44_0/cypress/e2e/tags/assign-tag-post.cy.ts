@@ -46,6 +46,7 @@ describe("Cypress Create tag and assign to post Test Suite", function () {
         cy.wait(1000);  
         page.selectPublish();
         page.publish();     
+        page.confirmPublish();
         page.waitForPublish();        
         page.closeWindowPublish();
         page.navigate();
@@ -93,6 +94,7 @@ describe("Cypress Create tag and assign to post Test Suite", function () {
         cy.wait(1000);  
         page.selectPublish();
         page.publish();     
+        page.confirmPublish();
         page.waitForPublish();        
         page.closeWindowPublish();
         page.navigate();

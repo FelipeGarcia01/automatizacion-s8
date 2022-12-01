@@ -1,16 +1,16 @@
 import CreatePostPage from '../../PageObject/CreatePostPage'
 import LandingPage from '../../PageObject/LandingPage'
-import LabsPage from '../../PageObject/LabsPage'
 import { IStrategy } from '../../support/strategy/i-strategy'
 import { StrategyFactory } from "../../support/strategy/strategy-factory"
 import { LoginPage } from '../../PageObject/login-page'
+import { LabsPage } from '../../PageObject/labs-page'
 require('@cypress/xpath')
 
 
 describe('Publish a post', () => {
   let strategy: IStrategy;
   let logInPage = new LoginPage();
-
+  let labPage = new LabsPage();
   before(async () => {
     strategy = await StrategyFactory.getStrategy();
   })
@@ -20,7 +20,7 @@ describe('Publish a post', () => {
     let title = strategy.getShortString()
     let body = strategy.getLargeString()
     logInPage.doLogIn()
-    LabsPage.clearAdmin()
+    labPage.clearAdmin()
 
     // When
     CreatePostPage.createPost(title, body)
@@ -35,7 +35,7 @@ describe('Publish a post', () => {
     let title = strategy.getNaughtyString()
     let body = strategy.getNaughtyString()
     logInPage.doLogIn()
-    LabsPage.clearAdmin()
+    labPage.clearAdmin()
 
     // When
     CreatePostPage.createPost(title, body)

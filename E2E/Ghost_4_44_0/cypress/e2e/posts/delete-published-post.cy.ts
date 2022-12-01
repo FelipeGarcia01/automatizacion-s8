@@ -1,17 +1,17 @@
 
 import CreatePostPage from '../../PageObject/CreatePostPage'
-import LabsPage from '../../PageObject/LabsPage'
 import { IStrategy } from '../../support/strategy/i-strategy'
 import { StrategyFactory } from "../../support/strategy/strategy-factory"
 import PostsPage from "../../PageObject/PostsPage";
 import { LoginPage } from '../../PageObject/login-page';
+import { LabsPage } from '../../PageObject/labs-page';
 require('@cypress/xpath')
 
 
 describe('Delete published post', () => {
   let strategy: IStrategy;
   let logInPage = new LoginPage();
-
+  let labPage = new LabsPage();
   before(async () => {
     strategy = await StrategyFactory.getStrategy();
   })
@@ -21,7 +21,7 @@ describe('Delete published post', () => {
     let title = strategy.getShortString()
     let body = strategy.getLargeString()
     logInPage.doLogIn()
-    LabsPage.clearAdmin()
+    labPage.clearAdmin()
     CreatePostPage.createPost(title, body)
     CreatePostPage.publishPost()
 
@@ -39,7 +39,7 @@ describe('Delete published post', () => {
     let title2 = strategy.getNaughtyString()
     let body = strategy.getNaughtyString()
     logInPage.doLogIn()
-    LabsPage.clearAdmin()
+    labPage.clearAdmin()
     CreatePostPage.createPost(title, body)
     CreatePostPage.publishPost()
 

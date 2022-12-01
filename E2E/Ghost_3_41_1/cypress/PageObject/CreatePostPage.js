@@ -9,6 +9,7 @@ export class CreatePostPage {
 
         this.buttonPublish = "//span[normalize-space()='Publish']"
         this.buttonPublishNow = "//button[@class='gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view']//span[contains(text(),'Publish')]"
+        this.buttonConfirmPublish = "//button[@class='gh-btn gh-btn-black gh-btn-icon ember-view']//span[contains(text(),'Publish')]"
         this.buttonReturnPosts = "//a[@class='blue link fw4 flex items-center ember-view']"
         this.buttonCloseNotifyNewPosts = "//button[@class='gh-notification-close']//*[name()='svg']//*[name()='path' and contains(@d,'M12.707 12')]"
 
@@ -41,6 +42,8 @@ export class CreatePostPage {
         takeScreenShot()
         cy.xpath(this.buttonPublishNow).click()
         takeScreenShot()
+        cy.xpath(this.buttonConfirmPublish).click()
+        takeScreenShot()
         cy.xpath(this.buttonReturnPosts).contains("Posts").click()
         takeScreenShot()
         cy.xpath(this.buttonCloseNotifyNewPosts).click()
@@ -64,8 +67,6 @@ export class CreatePostPage {
         cy.xpath(this.nameTag).type(tagName + '{enter}')
         takeScreenShot()
         cy.xpath(this.buttonCloseTag).click()
-        takeScreenShot()
-        cy.xpath(this.buttonReturnPosts).contains("Posts").click()
         takeScreenShot()
     }
 

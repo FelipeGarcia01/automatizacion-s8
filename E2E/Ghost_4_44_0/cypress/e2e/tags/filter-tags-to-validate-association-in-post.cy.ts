@@ -44,7 +44,8 @@ describe("Cypress Filter tags to validate asociation post Test Suite", function 
             page.enterDescriptionPost(descriptionPost);
             cy.wait(1000);  
             page.selectPublish();
-            page.publish();     
+            page.publish();   
+            page.confirmPublish();    
             page.waitForPublish();        
             page.closeWindowPublish();
             cy.wait(1000);  
@@ -67,7 +68,8 @@ describe("Cypress Filter tags to validate asociation post Test Suite", function 
             cy.wait(2000);  
             page.selectPublish();
             cy.wait(2000);  
-            page.publish();     
+            page.publish();    
+            page.confirmPublish();   
             page.waitForPublish();        
             page.closeWindowPublish();
             cy.wait(1000);
@@ -111,6 +113,7 @@ describe("Cypress Filter tags to validate asociation post Test Suite", function 
             cy.wait(1000);  
             page.selectPublish();
             page.publish();     
+            page.confirmPublish();
             page.waitForPublish();        
             page.closeWindowPublish();
             cy.wait(1000);  
@@ -133,7 +136,8 @@ describe("Cypress Filter tags to validate asociation post Test Suite", function 
             cy.wait(2000);  
             page.selectPublish();
             cy.wait(2000);  
-            page.publish();     
+            page.publish();    
+            page.confirmPublish();
             page.waitForPublish();        
             page.closeWindowPublish();
             cy.wait(1000);

@@ -28,12 +28,14 @@ describe("Cypress Edit post Test Suite", function () {
         page.enterNamePost(namePost);
         page.enterDescriptionPost(descriptionPost);
         page.selectPublish();
-        page.publish();        
+        page.publish();     
+        page.confirmPublish();    
         page.waitForPublish();        
         page.closeWindowPublish();        
         page.enterDescriptionPost(newValueDescription );
-        page.selectPublish();
-        page.publish();        
+        page.selectUpdate();
+        page.uptadte();  
+        //page.confirmPublish();      
         page.waitForPublish();        
         page.closeWindowPublish();
         page.navigateIndex();
@@ -50,26 +52,29 @@ describe("Cypress Edit post Test Suite", function () {
         let descriptionPost = strategy.getNaughtyString();
         let newValueDescription = strategy.getNaughtyString();
         
-        //When
-        logInPage.doLogIn();
-        const page = new PostPage();
-        page.navigate();
-        page.createPost();
-        page.enterNamePost(namePost);
-        page.enterDescriptionPost(descriptionPost);
-        page.selectPublish();
-        page.publish();        
-        page.waitForPublish();        
-        page.closeWindowPublish();        
-        page.enterDescriptionPost(newValueDescription );
-        page.selectPublish();
-        page.publish();        
-        page.waitForPublish();        
-        page.closeWindowPublish();
-        page.navigateIndex();
+       //when
+       logInPage.doLogIn();
+       const page = new PostPage();
+       page.navigate();
+       page.createPost();
+       page.enterNamePost(namePost);
+       page.enterDescriptionPost(descriptionPost);
+       page.selectPublish();
+       page.publish();     
+       page.confirmPublish();    
+       page.waitForPublish();        
+       page.closeWindowPublish();        
+       page.enterDescriptionPost(newValueDescription );
+       page.selectUpdate();
+       page.uptadte();  
+       //page.confirmPublish();      
+       page.waitForPublish();        
+       page.closeWindowPublish();
+       page.navigateIndex();
 
-        //Then
-        page.isModifyPost(newValueDescription); 
+       //Then
+       page.isModifyPost(newValueDescription);  
+
         
     });
 });

@@ -46,13 +46,15 @@ describe("Cypress create tag and assign in pages Test Suite", function () {
         page.enterDescriptionPage(descriptionPage);
         cy.wait(1000);  
         page.selectPublish();
-        page.publish();     
+        page.publish();   
+        
         page.waitForPublish();        
         page.closeWindowPublish();
         //Edit Description
         page.enterDescriptionPage(descriptionPage1);
-        page.selectPublish();
-        page.publish();     
+        page.selectUpdate();
+        page.uptadte();    
+       
         page.waitForPublish();  
 
         page.selectSetting();
@@ -61,9 +63,8 @@ describe("Cypress create tag and assign in pages Test Suite", function () {
         page.selectTag(nameTag);
         page.closePostSettings();
         cy.wait(2000);  
-        page.selectPublish();
-        cy.wait(2000);  
-        page.publish();     
+        page.selectUpdate();
+        page.uptadte();          
         page.waitForPublish();        
         page.closeWindowPublish();
         cy.wait(1000);
@@ -83,8 +84,8 @@ describe("Cypress create tag and assign in pages Test Suite", function () {
         page2.closeWindowPublish();
         //Edit Description
         page2.enterDescriptionPage(descriptionPage2);
-        page2.selectPublish();
-        page2.publish();     
+        page2.selectUpdate();
+        page2.uptadte();       
         page2.waitForPublish();   
 
         page2.selectSetting();
@@ -93,9 +94,8 @@ describe("Cypress create tag and assign in pages Test Suite", function () {
         page2.selectTag(nameTag);
         page2.closePostSettings();
         cy.wait(2000);  
-        page2.selectPublish();
-        cy.wait(2000);  
-        page2.publish();     
+        page.selectUpdate();
+        page.uptadte();    
         page2.waitForPublish();        
         page2.closeWindowPublish();
         cy.wait(1000);
@@ -140,13 +140,15 @@ describe("Cypress create tag and assign in pages Test Suite", function () {
         page.enterDescriptionPage(descriptionPage);
         cy.wait(1000);  
         page.selectPublish();
-        page.publish();     
+        page.publish();   
+        
         page.waitForPublish();        
         page.closeWindowPublish();
         //Edit Description
         page.enterDescriptionPage(descriptionPage1);
-        page.selectPublish();
-        page.publish();     
+        page.selectUpdate();
+        page.uptadte();    
+        
         page.waitForPublish();  
 
         page.selectSetting();
@@ -155,9 +157,8 @@ describe("Cypress create tag and assign in pages Test Suite", function () {
         page.selectTag(nameTag);
         page.closePostSettings();
         cy.wait(2000);  
-        page.selectPublish();
-        cy.wait(2000);  
-        page.publish();     
+        page.selectUpdate();
+        page.uptadte();          
         page.waitForPublish();        
         page.closeWindowPublish();
         cy.wait(1000);
@@ -177,8 +178,8 @@ describe("Cypress create tag and assign in pages Test Suite", function () {
         page2.closeWindowPublish();
         //Edit Description
         page2.enterDescriptionPage(descriptionPage2);
-        page2.selectPublish();
-        page2.publish();     
+        page2.selectUpdate();
+        page2.uptadte();       
         page2.waitForPublish();   
 
         page2.selectSetting();
@@ -187,14 +188,14 @@ describe("Cypress create tag and assign in pages Test Suite", function () {
         page2.selectTag(nameTag);
         page2.closePostSettings();
         cy.wait(2000);  
-        page2.selectPublish();
-        cy.wait(2000);  
-        page2.publish();     
+        page.selectUpdate();
+        page.uptadte();    
         page2.waitForPublish();        
         page2.closeWindowPublish();
         cy.wait(1000);
-          
+            
         //Then
+
         tag.navigate();
         cy.wait(3000);          
         tag.validateTagsByName(nameTag, countPostWithTag);

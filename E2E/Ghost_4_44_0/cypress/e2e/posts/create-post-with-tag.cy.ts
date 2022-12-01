@@ -1,14 +1,13 @@
 import CreatePostPage from '../../PageObject/CreatePostPage'
 import TagsPage from '../../PageObject/TagsPage'
-import LabsPage from '../../PageObject/LabsPage'
 import { IStrategy } from '../../support/strategy/i-strategy'
 import { StrategyFactory } from "../../support/strategy/strategy-factory";
 import { LoginPage } from '../../PageObject/login-page';
-
+import { LabsPage } from "../../PageObject/labs-page";
 
 require('@cypress/xpath')
 let logInPage = new LoginPage();
-
+let labPage = new LabsPage();
 describe('Create tag from post', function () {
   let strategy: IStrategy;
   before(async () => {
@@ -22,12 +21,12 @@ describe('Create tag from post', function () {
     let tag = strategy.getTagName()
     
     logInPage.doLogIn()
-    LabsPage.clearAdmin()
+    labPage.clearAdmin()
 
     //When
     CreatePostPage.createPost(title, body)
     CreatePostPage.createTagFromPost(tag)
-
+    CreatePostPage.publishPost();
     //Then
     TagsPage.validateTag(tag)
   })
@@ -39,12 +38,12 @@ describe('Create tag from post', function () {
     let tag = strategy.getNaughtyString()
     
     logInPage.doLogIn()
-    LabsPage.clearAdmin()
+    labPage.clearAdmin()
 
     //When
     CreatePostPage.createPost(title, body)
     CreatePostPage.createTagFromPost(tag)
-
+    CreatePostPage.publishPost();
     //Then
     TagsPage.validateTag(tag)
   })

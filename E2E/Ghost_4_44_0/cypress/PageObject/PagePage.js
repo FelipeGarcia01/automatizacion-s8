@@ -15,16 +15,19 @@ export class PagePage {
         createBtn :() => cy.xpath("//span[normalize-space()='New page']"), 
         namePageField :() => cy.xpath("//textarea[@class= 'gh-editor-title ember-text-area gh-input ember-view']"),
         descriptionPageField : () => cy.xpath("//div[@data-kg='editor']"),
-        selectPublish :() => cy.xpath("//div[@class= 'ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger']"),
-        publishBtn :() => cy.xpath("//button[@class= 'gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view']"), 
-        closeWindowPublish : () => cy.xpath("//button[@class= 'gh-btn gh-btn-outline gh-btn-link']"),
+        selectPublish :() => cy.xpath("//span[normalize-space()='Publish']"),
+        publishBtn :() => cy.xpath("//button[@class='gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view']//span[contains(text(),'Publish')]"), 
+        selectUpdate :() => cy.xpath("//span[normalize-space()='Update']"),
+        updateBtn :() => cy.xpath("//button[@class='gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view']//span[contains(text(),'Update')]"), 
+        confirmPublishBtn :() => cy.xpath("//button[@class='gh-btn gh-btn-black gh-btn-icon ember-view']//span[contains(text(),'Publish')]"),                                             
+        closeWindowPublish : () => cy.xpath("//button[@class= 'gh-btn gh-btn-outline']"),
         findValuePostPublish: () => cy.xpath("//section[@class='post-card-excerpt']/p"),
         titlePagePublished: (title) => cy.xpath('//h1[normalize-space()="'+title+'"]'),
         descriptionPagePublished: (text) => cy.xpath('//p[normalize-space()="'+text+'"]'),
         selectSetting: () => cy.xpath("//button[@title='Settings']"),
         listTag: () => cy.xpath("//input[@class='ember-power-select-trigger-multiple-input']"),
         selectFilterTag: (name) => cy.xpath('//li[normalize-space()="'+name+'"]'),
-        closePostSettings: () => cy.xpath("//button[@class='close settings-menu-header-action']"),
+        closePostSettings: () => cy.xpath("//button[@class='settings-menu-toggle gh-btn gh-btn-editor gh-btn-icon icon-only gh-btn-action-icon']"),
         }
 
     createPage(){
@@ -48,9 +51,27 @@ export class PagePage {
         return this
     }
 
+    selectUpdate() {
+        this.elements.selectUpdate().click( {force: true});
+        takeScreenShot();
+        return this
+    }
+
+    uptadte() {
+        this.elements.updateBtn().click({force: true});
+        takeScreenShot();
+        return this
+    }
+
     publish() {
         this.elements.publishBtn().click({force: true});
         takeScreenShot();
+        return this
+    }
+
+    confirmPublish() {
+        this.elements.confirmPublishBtn().click({force: true});
+        takeScreenShot(); 
         return this
     }
 

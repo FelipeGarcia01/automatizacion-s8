@@ -7,7 +7,7 @@ export class PostPage {
 
         this.h3ThereIsNoPost = "//span[normalize-space()='Write a new post']"
 
-        this.spanDraft = "//span[@class='gh-content-status-draft gh-badge gh-badge-purple nowrap']"
+        this.spanDraft = "//span[@class='gh-content-status-draft gh-badge gh-badge-pink nowrap']"
     }
 
     validateSchedulePost = (postTitle) => {

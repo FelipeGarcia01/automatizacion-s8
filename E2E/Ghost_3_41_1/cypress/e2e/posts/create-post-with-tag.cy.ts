@@ -25,9 +25,9 @@ describe('Create tag from post', function () {
     LabsPage.clearAdmin()
 
     //When
-    CreatePostPage.createPost(title, body)
+    CreatePostPage.createPost(title, body)    
     CreatePostPage.createTagFromPost(tag)
-
+    CreatePostPage.publishPost();
     //Then
     TagsPage.validateTag(tag)
   })
@@ -44,7 +44,7 @@ describe('Create tag from post', function () {
     //When
     CreatePostPage.createPost(title, body)
     CreatePostPage.createTagFromPost(tag)
-
+    CreatePostPage.publishPost();
     //Then
     TagsPage.validateTag(tag)
   })

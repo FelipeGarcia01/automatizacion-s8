@@ -17,17 +17,20 @@ export class PostPage {
         selectUser : () => cy.xpath("//div[text()='demouser']"),
         createBtn :() => cy.xpath("//a[@title= 'New post']"), 
         namePostField :() => cy.xpath("//textarea[@class= 'gh-editor-title ember-text-area gh-input ember-view']"),
-        selectPublish :() => cy.xpath("//div[@class= 'ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger']"),
+        selectPublish :() => cy.xpath("//span[normalize-space()='Publish']"),
         descriptionPostField : () => cy.xpath("//div[@data-kg='editor']"),
-        publishBtn :() => cy.xpath("//button[@class= 'gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view']"), 
+        publishBtn :() => cy.xpath("//button[@class='gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view']//span[contains(text(),'Publish')]"),  
+        confirmPublishBtn :() => cy.xpath("//button[@class='gh-btn gh-btn-black gh-btn-icon ember-view']//span[contains(text(),'Publish')]"),                                             
+        selectUpdate :() => cy.xpath("//span[normalize-space()='Update']"),
+        updateBtn :() => cy.xpath("//button[@class='gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view']//span[contains(text(),'Update')]"),
         closeWindowPublish : () => cy.xpath("//button[@class= 'gh-btn gh-btn-outline gh-btn-link']"),
-        findValuePostPublish: () => cy.xpath("//section[@class='post-card-excerpt']/p"),
+        findValuePostPublish: () => cy.xpath("//div[@class='post-card-excerpt']//p"),
         selectSetting: () => cy.xpath("//button[@title='Settings']"),
         listTag: () => cy.xpath("//input[@class='ember-power-select-trigger-multiple-input']"),
         selectTag: (name) => cy.xpath('(//div[@class="form-group"]//li[normalize-space()="'+name+'"])'),
         listarFilterTag: () => cy.xpath("//div[contains(@class,'gh-contentfilter-menu gh-contentfilter-tag')]//div[contains(@role,'button')]"),
         selectFilterTag: (name) => cy.xpath('//li[normalize-space()="'+name+'"]'),
-        closePostSettings: () => cy.xpath("//button[@class='close settings-menu-header-action']"),
+        closePostSettings: () => cy.xpath("//span[@class='settings-menu-open']"),
         findPostInFilter: () => cy.xpath("//h3[@class='gh-content-entry-title']"),
         }
         
@@ -58,6 +61,23 @@ export class PostPage {
         publish() {
             this.elements.publishBtn().click({force: true});
             takeScreenShot(); 
+            return this
+        }
+
+        confirmPublish() {
+            this.elements.confirmPublishBtn().click({force: true});
+            takeScreenShot(); 
+            return this
+        }
+        selectUpdate() {
+            this.elements.selectUpdate().click( {force: true});
+            takeScreenShot();
+            return this
+        }
+    
+        uptadte() {
+            this.elements.updateBtn().click({force: true});
+            takeScreenShot();
             return this
         }
 
@@ -99,15 +119,15 @@ export class PostPage {
         }
 
         closeWindowPublish(){
-            this.elements.closeWindowPublish().click();
-            takeScreenShot();
-            return this
+            //this.elements.closeWindowPublish().click();
+            //takeScreenShot();
+            //return this
         }
 
         waitForPublish(){
-            cy.xpath("//button[2]/span").should('have.text',"Update");
-            takeScreenShot();
-            return this
+            //cy.xpath("//button[2]/span").should('have.text',"Update");
+            //takeScreenShot();
+            //return this
         }
 
         isModifyPost(text){                        

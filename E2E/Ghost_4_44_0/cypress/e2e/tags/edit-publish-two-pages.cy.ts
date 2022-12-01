@@ -33,13 +33,15 @@ describe("Cypress Edit and publish two pages Test Suite", function () {
         page.enterDescriptionPage(descriptionPage);
         cy.wait(1000);  
         page.selectPublish();
-        page.publish();     
+        page.publish();    
+        //page.confirmPublish();
         page.waitForPublish();        
         page.closeWindowPublish();
         cy.wait(1000);
         page.enterDescriptionPage(descriptionPage1);
-        page.selectPublish();
-        page.publish();     
+        page.selectUpdate();
+        page.uptadte();   
+       // page.confirmPublish();  
         page.waitForPublish();  
         //Page2  
         cy.wait(1000); 
@@ -52,13 +54,15 @@ describe("Cypress Edit and publish two pages Test Suite", function () {
         page2.enterDescriptionPage(descriptionPage);
         cy.wait(1000);  
         page2.selectPublish();
-        page2.publish();     
+        page2.publish();    
+        //page2.confirmPublish();
         page2.waitForPublish();        
         page2.closeWindowPublish();
         cy.wait(1000);
         page2.enterDescriptionPage(descriptionPage2);
-        page2.selectPublish();
-        page2.publish();     
+        page2.selectUpdate();
+        page2.uptadte();     
+        //page2.confirmPublish(); 
         page2.waitForPublish();   
         cy.wait(1000);
         //Then
@@ -93,13 +97,15 @@ describe("Cypress Edit and publish two pages Test Suite", function () {
         page.enterDescriptionPage(descriptionPage);
         cy.wait(1000);  
         page.selectPublish();
-        page.publish();     
+        page.publish();    
+        //page.confirmPublish();
         page.waitForPublish();        
         page.closeWindowPublish();
         cy.wait(1000);
         page.enterDescriptionPage(descriptionPage1);
-        page.selectPublish();
-        page.publish();     
+        page.selectUpdate();
+        page.uptadte();   
+       // page.confirmPublish();  
         page.waitForPublish();  
         //Page2  
         cy.wait(1000); 
@@ -112,13 +118,15 @@ describe("Cypress Edit and publish two pages Test Suite", function () {
         page2.enterDescriptionPage(descriptionPage);
         cy.wait(1000);  
         page2.selectPublish();
-        page2.publish();     
+        page2.publish();    
+        //page2.confirmPublish();
         page2.waitForPublish();        
         page2.closeWindowPublish();
         cy.wait(1000);
         page2.enterDescriptionPage(descriptionPage2);
-        page2.selectPublish();
-        page2.publish();     
+        page2.selectUpdate();
+        page2.uptadte();     
+        //page2.confirmPublish(); 
         page2.waitForPublish();   
         cy.wait(1000);
         //Then

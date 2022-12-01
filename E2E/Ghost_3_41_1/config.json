@@ -1,5 +1,5 @@
 {
-    "siteHost":"http://localhost:2368/",
+    "siteHost":"http://20.102.114.58/",
     "logIn":{
         "logInUrl": "ghost/#/signin",
         "userTagIdentifier":"#ember8",

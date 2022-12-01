@@ -18,7 +18,7 @@
         "creator":{
             "linkTitle":"New post",
             "linkHref": "ghost/#/editor/post/",
-            "titlePlaceholder":"Post Title",
+            "titlePlaceholder":"Post title",
             "titleText":"Cypress testing creator post",
             "contentIdentifier":"[data-placeholder='Begin writing your post...']",
             "contentText":"This is my test post content...",
@@ -76,7 +76,7 @@
     },
     "labs":{
         "labsUrl":"ghost/#/settings/labs",
-        "cleanButton":"button[class='gh-btn gh-btn-hover-red js-delete']",
+        "cleanButton":"button[class='gh-btn gh-btn-red js-delete']",
         "deleteConfirm":"button[class='gh-btn gh-btn-red gh-btn-icon ember-view']",
         "screenshotsPath":""
 

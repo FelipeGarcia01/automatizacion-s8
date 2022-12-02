@@ -32,22 +32,22 @@ Google Chrome: 107.0.5304.107 (Build oficial) (64 bits) <br>
 Windows: Windows 11 Home Single Language 22H2 64 bits <br>
 
 ## Estructura del proyecto
-Se realiza la construcción de una interfaz la cual permite utilizar el patron factory, permitiendo cambiar entre estrategias de una manera rápida, eficiente y totalmente transparente para los escenarios pruebas propuestos.
+Se realiza la construcción de una interfaz la cual permite utilizar el patron factory, permitiendo cambiar entre estrategias de una manera rápida, eficiente y totalmente transparente para los escenarios de pruebas propuestos.
 
 A traves de un parametro llamado strategy en el archivo de tsconfig.json, se configura la instancia concreta de la estrategia que se desea utilizar, y cada una de ellas se encarga de llamar o traer los datos aleatorios para cada una de las estrategias.
-Esta interfaz se encuentra en el directorio `cypress/support/strategy/i-strategy.ts`, al igual que las implementaciones concreatas de las tres estrategias que se encuentran en los directorios `cypress/support/strategy/data-pool-apriori-strategy.ts`, `cypress/support/strategy/data-pool-online-strategy.ts` y `cypress/support/strategy/online-strategy.ts`. <br>
+Esta interfaz se encuentra en el directorio `cypress/support/strategy/i-strategy.ts`, al igual que las implementaciones concreatas de las tres estrategias que se encuentran en los directorios `cypress/support/strategy/data-pool-apriori-strategy.ts`, `cypress/support/strategy/data-pool-online-strategy.ts`, `cypress/support/strategy/online-strategy.ts` y existe una nueva estrategia que es usada para ejecutar los casos de VRT. <br>
 
 
 Directorios generales<br>
 ├── cypress <br>
-├── estrategias-pruebas
+├── results - En este folder quedan las evidencias de las ejecuciones <br>
 
 ## Instrucciones para ejecución del proyecto
 Dado que la ejecución del proyecto completo requiere múltiples comandos en diferentes carpetas y cambios de archivos, se creó un script (`script.py`) en Python que ejecuta por el usuario todos los comandos requeridos.
 
 Siga los siguientes pasos para ejecutar el proyecto: <br>
-* Clonar el repositorio con el comando: `https://github.com/DiegoAUniandes/pruebas-datos-aleatorios.git`
-* Navegar a la raíz del repositorio: `cd pruebas-datos-aleatorios`
+* Clonar el repositorio con el comando: `https://github.com/FelipeGarcia01/automatizacion-s8.git`
+* Navegar a la raíz del repositorio: `cd E2E/Ghost_3_41_1`
 * Ejecutar el script de lanzamiento de todas las pruebas del proyecto: `python3 script.py`. Esta ejecución suele tardar 30 minutos por estrategia, se estima que la ejecución total tarde 1 hora y 30 minutos(Este tiempo puede variar de acuerdo a las caracteristicas de la maquina en la que se ejecuta.), por favor no cancele el proceso.
 * Al final de la ejecución de cada estrategia se presentara un reporte dado por `cypress.io` con los resultados de las ejecuciones.
 
@@ -60,8 +60,4 @@ En el siguiente enlace se puede acceder a estas a travez de un excel, se debe de
 
 ## Issues
 A continuación se encuentran los issues encontrados y reportadoss: <br>
-[Issues](https://github.com/DiegoAUniandes/pruebas-datos-aleatorios/issues)<br>
-
-## Estrategias de pruebas modificadas
-A continuación se encuentran los enlaces a las estrategias de pruebas actualizadas: <br>
-[Estrategias de pruebas actualizadas](./estrategias-pruebas/)<br>
+[Issues](https://github.com/FelipeGarcia01/automatizacion-s8/issues)<br>

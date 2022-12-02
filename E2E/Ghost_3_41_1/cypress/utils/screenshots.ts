@@ -1,4 +1,4 @@
-let stepCount = 0;
+let stepCount = 1;
 
 export default function takeScreenShot(){
     cy.wait(1000);

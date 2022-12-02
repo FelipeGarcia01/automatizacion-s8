@@ -1,5 +1,6 @@
 import { DataPoolAprioriStrategy } from "./data-pool-apriori-strategy"
 import { DataPoolOnlineStrategy } from "./data-pool-online-strategy"
+import { DataPoolVRTStrategy } from "./data-pool-vrt-strategy"
 import { IStrategy } from "./i-strategy"
 import { OnlineStrategy } from "./online-strategy"
 let config = require('../../tsconfig.json')
@@ -17,6 +18,8 @@ export class StrategyFactory {
                 return <IStrategy>dataPoolOnlineStrategy
             case 3:
                 return new OnlineStrategy()
+            case 4:
+                return new DataPoolVRTStrategy()                
         }
     }
 

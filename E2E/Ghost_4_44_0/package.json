@@ -17,7 +17,7 @@
   },
   "scripts": {
     "open": "cypress open --browser chrome --e2e",
-    "test": "cypress run"
+    "test": "cypress run --spec 'cypress/e2e/login/invite-invalid-admin.cy.ts'"
   },
   "repository": {
     "type": "git",

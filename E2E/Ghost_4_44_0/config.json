@@ -42,7 +42,7 @@
         "creator":{
             "linkTitle": "New Tag",
             "linkHref": "#/tags/new/",
-            "saveButton": "button[class='gh-btn gh-btn-blue gh-btn-icon ember-view']",
+            "saveButton": "button[class='gh-btn gh-btn-primary gh-btn-icon ember-view']",
             "body":{
                 "tagName":"#tag-name",
                 "tagNameText":"new tag",
@@ -57,15 +57,15 @@
         "screenshotsPath":"",
         "creator":{
             "linkHref":"#/editor/page/",
-            "titlePlaceholder":"Page Title",
+            "titlePlaceholder":"Page title",
             "titleText":"Creando una nueva pagina",
             "contentIdentifier":"[data-placeholder='Begin writing your page...']",
             "contentText":"This is my test page content...",
-            "publishButton":"div[class='ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger']",
-            "publishConfirm":"button[class='gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view']"
+            "publishButton":"div[class='gh-publishmenu ember-view']",
+            "publishConfirm":"button[class='gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view']"
         },
         "eraser":{
-            "buttonSetting":"button[class='post-settings']",
+            "buttonSetting":"button[class='settings-menu-toggle gh-btn gh-btn-editor gh-btn-icon icon-only gh-btn-action-icon']",
             "buttonDelete":"button[class='gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button']",
             "modalButtonConfirm": "button[class='gh-btn gh-btn-red gh-btn-icon ember-view']"
         },

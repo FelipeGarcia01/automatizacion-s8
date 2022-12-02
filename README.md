@@ -74,7 +74,7 @@ Cada uno de los siguientes escenarios combina y prueba diferentes funcionalidade
 En la descripción de cada escenario se indica el objetivo principal de la prueba y el listado de pasos y/o funcionalidades respectivas, así como la técnica aplicada en cada uno de ellos.<br>
 En el siguiente enlace se puede acceder a estas a travez de un excel, se debe descargar el archivo presionando el boton que se indica en la imagen a continuación.
 ![](distribucion.png)
-[Distribución estrategias y escenarios de pruebas](Distribucion de estrategias y escenarios de pruebas.xlsx)<br>
+[Distribución estrategias y escenarios de pruebas](https://github.com/FelipeGarcia01/automatizacion-s8/blob/main/Distribucion%20de%20estrategias%20y%20escenarios%20de%20pruebas.xlsx)<br>
 
 ## Issues
 A continuación se encuentran los issues encontrados y reportados: <br>

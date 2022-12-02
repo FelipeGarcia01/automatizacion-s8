@@ -5,9 +5,7 @@
 ## Pasos de ejecución de pruebas
 1. Descargue el repositorio con el comando `git clone https://github.com/FelipeGarcia01/automatizacion-s8.git`
 2. Navegue en la terminal hasta la carpeta 'RiPuppet_Ghost_V4' con el comnando `cd Reconocimiento/RiPuppet_Ghost_V4`
-3. Ejecute el comando `npm install`
-4. Verifique que se realizó la instalación de todas las versiones mencionadas previamente
-5. Ejecute las pruebas con el siguiente comando: `node index.js`
+3. Ejecute el comando `python script_ripper.py`
 
 
 ## Nota Importante

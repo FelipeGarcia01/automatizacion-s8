@@ -32,7 +32,6 @@ Cypress: ^10.10.0 <br>
 Google Chrome: 107.0.5304.107 (Build oficial) (64 bits) <br>
 Windows: Windows 11 Home Single Language 22H2 64 bits <br>
 
-## Estructura del proyecto
 
 * Pruebas de exploración
 

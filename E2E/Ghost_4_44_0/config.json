@@ -82,11 +82,12 @@
 
     },
     "members":{
-        "membersUrl":"ghost/#/staff",
-        "invitePeopleButton":"button[class='gh-btn gh-btn-green']",
-        "memberEmailAddressTextbox":"input[class='email ember-text-field gh-input ember-view']",
-        "roleDropDownList":"select[id='new-user-role']",
-        "sendInvitationButton":"button[class='gh-btn gh-btn-green gh-btn-icon ember-view']",
+        "membersUrl":"ghost/#/members",
+        "invitePeopleButton":"a[class='ember-view gh-btn gh-btn-primary']",
+        "memberName":"input[name='name']",
+        "memberEmailAddressTextbox":"input[name='email']",
+        "roleDropDownList":"input[class='ember-power-select-trigger-multiple-input']",
+        "sendInvitationButton":"button[class='gh-btn gh-btn-primary gh-btn-icon ember-view']",
         "invalidEmailMessage":"p[class='response']"
     }
 }

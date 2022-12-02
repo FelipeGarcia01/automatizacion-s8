@@ -20,8 +20,9 @@ describe('Scenario1',()=>{
         
         let membersPage = new MemberPage();
         let memberEmail = strategy.getShortString();
+        let memberName = strategy.getShortString();
         let memberRole = 'Administrator';
-        membersPage.inviteNewMember(memberEmail, memberRole);
+        membersPage.inviteNewMember(memberName,memberEmail, memberRole);
 
     });
 

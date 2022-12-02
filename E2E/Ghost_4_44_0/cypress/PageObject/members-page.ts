@@ -9,6 +9,7 @@ export class MemberPage{
     public roleDropDownList:string;
     public sendInvitationButton:string;
     public invalidEmailMessage:string;
+    public memberName:string;
 
     constructor(){
         this.memberUrl = config.siteHost+config.members.membersUrl;
@@ -17,25 +18,27 @@ export class MemberPage{
         this.roleDropDownList = config.members.roleDropDownList;
         this.sendInvitationButton = config.members.sendInvitationButton;
         this.invalidEmailMessage = config.members.invalidEmailMessage;
+        this.memberName = config.members.memberName;
     }
 
-    inviteNewMember(memberEmail, memberRole){
+    inviteNewMember(memberName,memberEmail, memberRole){
         cy.visit(this.memberUrl)
             .then(()=>{
                 takeScreenShot()
                 cy.get(this.invitePeopleButton).click()
                 .then(()=>{
                     takeScreenShot()
-                    cy.get(this.memberEmailAddressTextbox).first().type(memberEmail, { parseSpecialCharSequences: false })
+                    cy.get(this.memberName).type(memberName,{ parseSpecialCharSequences: false, force:true });
+                    cy.get(this.memberEmailAddressTextbox).first().type(memberEmail, { parseSpecialCharSequences: false, force:true })
                     .then(()=>{
                         takeScreenShot()
-                        cy.get(this.roleDropDownList).select(memberRole)
+                        cy.get(this.roleDropDownList).type(memberRole+"{enter}")
                         .then(()=>{
                             takeScreenShot()
                             cy.get(this.sendInvitationButton).click()
                             .then(()=>{
                                 takeScreenShot()
-                                cy.get(this.invalidEmailMessage).should('be.visible');
+                                cy.get(this.invalidEmailMessage).should('have.css','color','rgb(115, 131, 147)');
                             });
                         });
                     });

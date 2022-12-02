@@ -16,8 +16,9 @@ describe('Scenario2',()=>{
         logInPage.doLogIn();
         let membersPage = new MemberPage();
         let memberEmail = strategy.getShortString();
+        let memberName = strategy.getShortString();
         let memberRole = 'Contributor';
-        membersPage.inviteNewMember(memberEmail, memberRole);
+        membersPage.inviteNewMember(memberName, memberEmail, memberRole);
 
     });
 

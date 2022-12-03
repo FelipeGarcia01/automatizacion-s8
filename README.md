@@ -58,12 +58,12 @@ Dado que la ejecución del proyecto completo requiere múltiples comandos en dif
 Siga los siguientes pasos para ejecutar el proyecto: <br>
 * Clonar el repositorio con el comando: `https://github.com/FelipeGarcia01/automatizacion-s8.git`
 * Navegar a la raíz del repositorio: `/`
-* Ejecutar el script de lanzamiento de todas las pruebas del proyecto: `python3 script.py`. 
+* Ejecutar el script de lanzamiento de todas las pruebas del proyecto: `python script.py`. 
 * El script ejecutara lo siguiente:
 
-1. **Pruebas de Exploración** usando Ripuppet en la versión 4.40.0 de Ghost
-2. **Pruebas de VRT** - Ejecución de pruebas usando datos specificos apriori con las versiones de Ghost 3.41.1 vs 4.40.0 a traves de Cypress
-3. **Pruebas aleatorias** usando las estrategias datapool apriori, datapool online y online en  la versión 4.40.0 de Ghost a traves de Cypress
+1. **Pruebas de Exploración** usando Ripuppet en la versión 4.44.0 de Ghost
+2. **Pruebas de VRT** - Ejecución de pruebas usando datos specificos apriori con las versiones de Ghost 3.41.1 vs 4.44.0 a traves de Cypress
+3. **Pruebas aleatorias** usando las estrategias datapool apriori, datapool online y online en  la versión 4.44.0 de Ghost a traves de Cypress
 random_test()  
 * Al final de la ejecución de cada estrategia se presentara un reporte dado por `cypress.io` con los resultados de las ejecuciones.
 

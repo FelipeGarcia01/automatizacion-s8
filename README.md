@@ -17,6 +17,7 @@ Diego Alejandro Ramírez - da.ramirez55@uniandes.edu.co
 [Resultados esperados](#resultados-esperados)<br>
 [Issues encontrados y reportados](#issues)<br>
 [Distribución de estrategias y escenarios de pruebas](#estrategias-y-escenarios-de-pruebas) <br>
+[Pruebas manuales](#pruebas-manuales) <br>
 
 
 ## Versiones de software requeridos para la ejecución de los proyectos
@@ -75,6 +76,11 @@ En la descripción de cada escenario se indica el objetivo principal de la prueb
 En el siguiente enlace se puede acceder a estas a travez de un excel, se debe descargar el archivo presionando el boton que se indica en la imagen a continuación.
 ![](distribucion.png)
 [Distribución estrategias y escenarios de pruebas](https://github.com/FelipeGarcia01/automatizacion-s8/blob/main/Distribucion%20de%20estrategias%20y%20escenarios%20de%20pruebas.xlsx)<br>
+
+
+## Pruebas manuales
+Como parte de la estrategia, inicalmente se realizan pruebas manuales con las siguientes distribuiones y resultados:
+[Pruebas manuales]()
 
 ## Issues
 A continuación se encuentran los issues encontrados y reportados: <br>

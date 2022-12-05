@@ -80,7 +80,7 @@ En el siguiente enlace se puede acceder a estas a travez de un excel, se debe de
 
 ## Pruebas manuales
 Como parte de la estrategia, inicalmente se realizan pruebas manuales con las siguiente distribución y resultados:
-[Pruebas manuales]()
+[Pruebas manuales](https://github.com/FelipeGarcia01/automatizacion-s8/blob/main/Inventario%20pruebas%20exploratorias.xlsx)
 
 ## Issues
 A continuación se encuentran los issues encontrados y reportados: <br>

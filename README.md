@@ -79,7 +79,7 @@ En el siguiente enlace se puede acceder a estas a travez de un excel, se debe de
 
 
 ## Pruebas manuales
-Como parte de la estrategia, inicalmente se realizan pruebas manuales con las siguientes distribuiones y resultados:
+Como parte de la estrategia, inicalmente se realizan pruebas manuales con las siguiente distribución y resultados:
 [Pruebas manuales]()
 
 ## Issues
